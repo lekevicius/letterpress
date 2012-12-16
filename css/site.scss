@@ -1,0 +1,219 @@
+---
+---
+
+html, body {
+	background: #f0efec;
+}
+
+.hide {
+	display: none;
+}
+
+.page {
+	font-family: "museo-sans", sans-serif;
+	width: 600px;
+	margin: 20px auto 100px auto;
+}
+
+h1 {
+	text-align: center;
+	font-weight: 300;
+	margin: 0 0 20px 0;
+}
+
+p.status {
+	text-align: center;
+	font-weight: 500;
+	margin: 0 0 40px 0;
+	font-size: 15px;
+}
+
+ul.players {
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
+	width: 200px;
+	height: 150px;
+
+	li {
+		float: left;
+		width: 70px;
+		text-align: center;
+		padding: 80px 0 0 0;
+		background: center top no-repeat;
+		margin: 0 15px;
+
+
+		.indicator {
+			width: 32px;
+			height: 28px;
+			margin: 12px auto 0 auto;
+			background: no-repeat;
+			visibility: hidden;
+		}
+
+		&.active {
+			.indicator {
+				visibility: visible;
+			}
+		}
+
+		&#me_avatar {
+			background-image: url(../images/avatar-cheater.png);
+			.indicator { background-image: url(../images/indicator-cheater.png); }
+		}
+		&#opponent_avatar {
+			background-image: url(../images/avatar-opponent.png);
+			.indicator { background-image: url(../images/indicator-opponent.png); }
+		}
+	}
+
+	&.counting {
+		#me_avatar .label { color: #00a2ff; }
+		#opponent_avatar .label { color: #ff432f; }
+	}
+
+	&.clickable li {
+		cursor: pointer;
+	}
+}
+
+.grid {
+	margin: 14px auto;
+	width: 375px;
+	height: 375px;
+	position: relative;
+
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+
+	&.top-shifted {
+		height: 500px;
+	}
+
+	&.clickable {
+
+		.input {
+			cursor: pointer;
+
+			&.called-letter {
+				cursor: default;
+			}
+		}
+
+	}
+}
+
+.row {
+	height: 75px;
+}
+
+.row:nth-child(5n+1) .input { top: 0; }
+.row:nth-child(5n+2) .input { top: 75px; }
+.row:nth-child(5n+3) .input { top: 150px; }
+.row:nth-child(5n+4) .input { top: 225px; }
+.row:nth-child(5n+5) .input { top: 300px; }
+
+.grid.top-shifted .row:nth-child(5n+1) .input { top: 120px; }
+.grid.top-shifted .row:nth-child(5n+2) .input { top: 195px; }
+.grid.top-shifted .row:nth-child(5n+3) .input { top: 270px; }
+.grid.top-shifted .row:nth-child(5n+4) .input { top: 345px; }
+.grid.top-shifted .row:nth-child(5n+5) .input { top: 420px; }
+
+.input {
+
+	width: 75px;
+	height: 75px;
+	float: left;
+	font-size: 28px;
+	background: #eae9e4;
+	position: absolute;
+
+	&:nth-child(5n+1) { left: 0; }
+	&:nth-child(5n+2) { left: 75px; }
+	&:nth-child(5n+3) { left: 150px; }
+	&:nth-child(5n+4) { left: 225px; }
+	&:nth-child(5n+5) { left: 300px; }
+
+	input {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		text-align: center;
+		font-size: 28px;
+		font-family: "museo-sans", sans-serif;
+		width: 75px;
+		height: 75px;
+		background: transparent;
+		text-transform: uppercase;
+	}
+
+
+
+	&.static {
+		text-align: center;
+		font-size: 28px;
+		text-transform: uppercase;
+		padding: 21px 0 20px 0;
+		height: 34px;
+		width: 75px;
+		transition: all 0.3s;
+		-webkit-transition: all 0.3s;
+	}
+
+	&.belonging_own {
+		background: #78c8f5;
+		&.protected_own {
+			background: #00a2ff;
+		}
+	}
+
+	&.belonging_opponent {
+		background: #f7998d;
+		&.protected_opponent {
+			background: #ff432f;
+		}
+	}
+}
+
+button {
+	font-family: "museo-sans", sans-serif;
+	font-weight: 700;
+	border: 3px solid #000;
+	border-radius: 50px;
+	margin: 0 10px;
+	width: auto;
+	font-size: 24px;
+	padding: 14px 30px;
+	background: transparent;
+	cursor: pointer;
+
+	&:disabled {
+		border-color: #bbb;
+		color: #bbb;
+	}
+
+	&.light {
+		font-weight: 300;
+	}
+}
+
+.actions {
+	text-align: center;
+}
+
+.menu_actions {
+	position: absolute;
+	top: 20px;
+	left: 30px;
+
+	button {
+		font-weight: 300;
+		border: 1px solid #000;
+		margin: 10px 0;
+		width: auto;
+		display: block;
+		font-size: 16px;
+		padding: 14px 30px;
+	}
+}

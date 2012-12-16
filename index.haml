@@ -1,0 +1,59 @@
+---
+layout: default
+permalink: /
+---
+
+%h1 Letterpress Cheater
+
+%p.status Select who starts the game and enter letters on the board.
+
+%ul.players
+	%li#me_avatar.active
+		.label Cheater
+		.indicator
+	%li#opponent_avatar
+		.label Opponent
+		.indicator
+
+.grid
+	.row
+		.input#input_0
+		.input#input_1
+		.input#input_2
+		.input#input_3
+		.input#input_4
+	.row
+		.input#input_5
+		.input#input_6
+		.input#input_7
+		.input#input_8
+		.input#input_9
+	.row
+		.input#input_10
+		.input#input_11
+		.input#input_12
+		.input#input_13
+		.input#input_14
+	.row
+		.input#input_15
+		.input#input_16
+		.input#input_17
+		.input#input_18
+		.input#input_19
+	.row
+		.input#input_20
+		.input#input_21
+		.input#input_22
+		.input#input_23
+		.input#input_24
+
+.actions
+	%button#analyze_action{ disabled: true } Analyze Board
+
+	%button#clear_action.hide.light Clear
+	%button#submit_action.hide Sumbit &amp; Analyze
+
+	%button#done_action.hide Done
+
+.menu_actions
+	%button#played_words_actions Played Words

@@ -1,0 +1,4 @@
+title: Letterpress
+
+auto: false
+exclude: ['_site', 'bin', 'vendor', 'Gemfile', 'Gemfile.lock', 'Procfile', 'Rakefile', 'unicorn.rb', 'config.ru']
